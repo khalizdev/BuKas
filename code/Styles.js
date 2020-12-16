@@ -2,17 +2,17 @@ import {StyleSheet} from 'react-native';
 const style = StyleSheet.create({
     container : {
         flex: 1,
-        flexDirection: 'column',
-        height: "100%",
         justifyContent: 'center',
         alignItems: 'center',
-        backgroundColor: '#fff'
     },
-    
+    textHeaderHai: {
+        fontSize: 23,
+        marginLeft: 10,
+        marginTop: 10
+    },
     textHeaderName: {
         fontSize: 25,
-        marginLeft: 15,
-        marginTop: 25,
+        marginLeft: 10,
         fontWeight: 'bold'
     },
     textProfileName: {
@@ -32,8 +32,7 @@ const style = StyleSheet.create({
     },
     textQuestion: {
         fontSize: 25,
-        marginLeft: 15,
-        
+        marginLeft: 10,
     },
     imagelocation: {
         width: 20,
@@ -69,10 +68,6 @@ const style = StyleSheet.create({
     },
     containerDashboard : {
         flex: 1,
-        width : '100%',
-        height: '100%',
-        flexDirection: 'column',
-        backgroundColor: '#fff'
     },
     containerProfil: {
         flex: 1,
@@ -81,12 +76,10 @@ const style = StyleSheet.create({
         backgroundColor: '#fff'
     },
     flatdatabuku: {
-        height :'62%',
+        flex: 12,
         backgroundColor: '#D0E8F2',
         borderTopLeftRadius: 20,
         borderTopRightRadius: 20,
-        borderColor: '#000000',
-        borderWidth: 1,
         marginTop: 5
     },
     profilScreen:{
@@ -97,33 +90,25 @@ const style = StyleSheet.create({
         borderTopRightRadius: 40
     },
     columntambahbuku: {
-        marginLeft: 15,
-        marginRight: 15
+        alignItems: 'center'
     },
     ROw: {
         flexDirection: 'row'
     },
-    columntambahbukus: {
-        
-        width: '100%',
-        flexDirection: 'column',
-        marginLeft: 15,
-        marginRight: 55
-    },
-    rowtambahbukus: {
-        width: '40%',
-        flexDirection: 'row'
+    rowtambahbuku: {
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+        alignItems: 'flex-end',
+        marginHorizontal: 10
     },
     InputBukuJudul:{
         margin: 10
     },
     inputBuku: {
-        height :'80%',
+        flex: 7,
         backgroundColor: '#D0E8F2',
         borderTopLeftRadius: 20,
         borderTopRightRadius: 20,
-        borderColor: '#000000',
-        borderWidth: 1,
     },
     textlocation: {
         marginLeft: 10, 
@@ -131,10 +116,13 @@ const style = StyleSheet.create({
         marginTop: 10
     },
     headerDashboard : {
-        width : '100%',
-        height: '38%',
-        flexDirection: 'column',
-        backgroundColor: '#fff'
+        flex: 1,
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+    },
+    bodyDashboard: {
+        flex: 3,
+        justifyContent: 'flex-end',
     },
     headerProfil:{
         width : '100%',
@@ -159,11 +147,9 @@ const style = StyleSheet.create({
     },
     containerLogin : {
         flexDirection: 'row',
-        alignItems: 'center',
+        justifyContent: 'center',
+        alignItems: 'flex-end',
         marginBottom: 20,
-        width: "100%",
-        backgroundColor: '#fff',
-        marginLeft: 30
     },
     daftarbuku: {
         flexDirection: 'column',
@@ -174,8 +160,8 @@ const style = StyleSheet.create({
         marginTop: 20
     },
     logologinscreen :{
-        width: 50,
-        height: 50,
+        width: 75,
+        height: 75,
         marginRight: 10
     },
     textloginscreen :{
@@ -183,18 +169,16 @@ const style = StyleSheet.create({
         color: '#01C5C4',
         fontWeight: 'bold'
     },
-    columnemaillogin : {
+    authStyle : {
         flexDirection: 'column',
-        width: "90%"
+        width: '100%',
+        paddingHorizontal: 10
     },
-    InputEmail: {
-        borderColor: 'gray', 
-        borderWidth: 2,
+    textinput: {
         width: "100%",
         paddingLeft: 15,
         borderRadius: 10,
-        backgroundColor: '#FFFAA4',
-        
+        backgroundColor: '#FFF',
     },
     InputBuku: {
         borderColor: 'gray', 
@@ -204,24 +188,16 @@ const style = StyleSheet.create({
         borderRadius: 10,
         backgroundColor: '#fff',
     },
-
     DetailsBuku: {
-        borderColor: 'gray', 
-        borderWidth: 2,
-        width: "100%",
-        height: "150%",
-        paddingLeft: 15,
-        borderRadius: 10,
-        backgroundColor: '#D0E8F2',
+        flex: 1,
+        paddingLeft: 10,
+        alignItems: 'center'
     },
     buttonbottom: {
         marginBottom: 10,
         backgroundColor:'#01C5C4',
         borderRadius:10,
-        borderColor: '#fff',
         height: 40,
-        marginLeft:30,
-        marginRight: 30,
         width: "90%",
         justifyContent: 'center',
         position: 'absolute',
@@ -242,13 +218,9 @@ const style = StyleSheet.create({
     buttonbottomsavebuku: {
         backgroundColor:'#01C5C4',
         borderRadius:10,
-        borderColor: '#fff',
         height: 40,
-        marginLeft: 15,
-        marginRight: 15,
-        width: "90%",
+        marginHorizontal: 10,
         justifyContent: 'center',
-        alignItems: 'center',
         marginBottom: 10,
         marginTop: 30
     },
@@ -276,11 +248,11 @@ const style = StyleSheet.create({
         fontSize: 20,
     },
     daftarlogin: {
-        flex: 0.1,
+        flexDirection: 'row',
         width: "100%",
-        marginTop: 90,
-        justifyContent: 'center',
-        alignItems: 'center',
+        paddingLeft: 20,
+        paddingTop: 10,
+        justifyContent: 'flex-start',
     },
     textonboarding: {
         fontSize: 30,
@@ -291,7 +263,71 @@ const style = StyleSheet.create({
         fontSize: 20,
         color: '#153E90',
         textAlign: 'center'
-    }
+    },
+    text: {
+        marginVertical: 2,
+    },
+    cameraButton: {
+        backgroundColor: '#fff',
+        justifyContent: 'center',
+        alignItems: 'center',
+        height: 110,
+        width: 130,
+        borderColor: '#000',
+        borderRadius: 10,
+    },
+    header: {
+        height: 180,
+        justifyContent: 'center',
+        alignItems: 'center',
+    },
+    profileImage: {
+        height: 140,
+        width: 140,
+        borderRadius: 30,
+        marginTop: 25
+    },
+    button: {
+        alignItems: 'center',
+        justifyContent: 'center',
+        backgroundColor: '#01C5C4',
+        marginBottom: 10,
+        width: 150,
+        height: 40,
+        borderRadius: 10
+    },
+    Pesanmasuk: {
+        backgroundColor: '#01a4c5',
+        marginLeft: 10,
+        marginVertical: 5,
+        paddingVertical:10,
+        paddingHorizontal:10,
+        borderRadius:10,
+        color:'white',
+    },
+    Pesankirim: {
+        backgroundColor: '#01C5C4',
+        marginRight:10,
+        marginVertical: 5,
+        paddingVertical:10,
+        paddingHorizontal:10,
+        borderRadius:10,
+        color:'white',
+    },
+    inputPesan: {
+        flex: 8,
+        marginLeft: 10,
+        paddingRight: 5,
+        justifyContent: 'flex-start'
+    },
+    buttonchat: {
+        flex: 1,
+        backgroundColor:'#01C5C4',
+        marginRight: 10,
+        borderRadius:10,
+        justifyContent: 'center',
+        alignItems: 'center'
+    },
 })
 
 export default style;

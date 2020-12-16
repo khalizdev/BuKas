@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 import {Text, View, Image, TextInput,TouchableHighlight, Alert, LogBox} from 'react-native';
 import styles from './Styles';
 import { useNavigation } from '@react-navigation/native';
+import components from './components';
 
 // const firebaseConfig = {
 //     apiKey: "AIzaSyCcBqT_E73rPoFWSwtmMXe9IjHSuPNPdsA",
@@ -59,34 +60,19 @@ const LoginScreen = () => {
                 <Image style={styles.logologinscreen} source={require('../assetimage/books.png')}/>
                 <Text style={styles.textloginscreen}>BuKas</Text>
             </View>
-            <View style={styles.columnemaillogin}>
-                <Text style={{marginBottom: 10}}>Email Address</Text>
-                <TextInput 
-                    style={styles.InputEmail} 
-                    placeholder = "ex: muhnurkhalizz@gmail.com"
-                    placeholderTextColor = "#01C5C4"
-                    />
-            </View>
-            <View style={styles.columnemaillogin}>
-                <Text style={{marginBottom: 10, marginTop: 15}}>Password</Text>
-                <TextInput 
-                    style={styles.InputEmail} 
-                    placeholder = "***********" 
-                    placeholderTextColor = "#01C5C4"
-                    secureTextEntry={true}
-                    />
-            </View>
+            
+            <components.textInput title='Email Address' placeholder='example@gmail.com' secureEntry={false}/>
+            <components.textInput title='Password' placeholder='***********' secureEntry={true}/>
+        
             <View style={styles.daftarlogin}>
-                <Text onPress = {()=> navigation.navigate('RegistrationScreen')} style={{color: '#000000', fontSize: 18}}>Belum Memiliki Akun ? Daftar</Text>
+                <Text style={{color: '#000000', fontSize: 18}}>Belum Memiliki Akun? </Text>
+                <Text onPress = {()=> navigation.navigate('RegistrationScreen')} style={{color: '#000000', fontSize: 18, fontWeight: 'bold'}}>
+                    Daftar
+                </Text>
             </View>
+
             <View style={styles.buttonbottom}>
-                <TouchableHighlight 
-                    underlayColor="#01C5C4"                    
-                    onPress = {()=> navigation.navigate('ButtomTabBuKas')}
-                    > 
-                    <Text 
-                        style={styles.submitButton}>Masuk</Text>
-                </TouchableHighlight>
+                <components.primaryButton title='Masuk' style={styles.submitButton} screenName='ButtomTabBuKas'/>
             </View>
         </View>
     );

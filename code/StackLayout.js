@@ -7,6 +7,7 @@ import OnBoardingSatu from './OnBoardingSatu';
 import OnBoardingKedua from './OnBoardingKedua';
 import ButtomTabBuKas from './BottomTab';
 import DetailsScreen from './details';
+import Discussion from './Discussion';
 
 const Stack = createStackNavigator();
 const StackLayout = () => {
@@ -47,7 +48,11 @@ const StackLayout = () => {
             component = {DetailsScreen}
             options ={{headerShown: false}}
           />
-          
+          <Stack.Screen 
+            name= "Discussion"
+            component = {Discussion}
+            options ={{headerShown: false}}
+          />
       </Stack.Navigator>
     );
 }

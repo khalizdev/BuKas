@@ -1,68 +1,58 @@
-import React, {Component} from 'react';
-import {Image} from 'react-native';
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import {DashboardScreen, BuKasScreen, ProfilScreen, ChatScreen} from './BottomScreen';
-const Tab = createBottomTabNavigator();
+import React from 'react';
+import { createMaterialBottomTabNavigator } from '@react-navigation/material-bottom-tabs';
+import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
+import DashboardScreen from './DashboardScreen';
+import BuKasScreen from './BuKasScreen';
+import ProfilScreen from './ProfilScreen';
+import ChatScreen from './ChatScreen';
+
+const Tab = createMaterialBottomTabNavigator();
 const ButtomTabBuKas = ()=>{  
     return (
-        <Tab.Navigator 
+      <Tab.Navigator 
+        activeColor="#fff"
+        barStyle={{ backgroundColor: '#01C5C4' }}
         tabBarOptions={{
-          activeTintColor: '#000000',
+          activeTintColor: '#fff',
         }}
-        >
-          <Tab.Screen 
-            name="Dashboard" 
-            component={DashboardScreen}
-            options={{
-              tabBarIcon: ({size}) => (
-                <Image
-                source={require('../assetimage/house.png')}
-                  style={{
-                    width: size,
-                    height: size,
-                  }}/>),
-              }}
-              />
-          <Tab.Screen 
-            name="BuKas" 
-            component={BuKasScreen}
-            options={{
-              tabBarIcon: ({size}) => (
-                <Image
-                source={require('../assetimage/booktab.png')}
-                  style={{
-                    width: size,
-                    height: size,
-                  }}/>),
-              }}
-              />   
-          <Tab.Screen 
-            name="Chat" 
-            component={ChatScreen}
-            options={{
-              tabBarIcon: ({size}) => (
-                <Image
-                source={require('../assetimage/chat.png')}
-                  style={{
-                    width: size,
-                    height: size,
-                  }}/>),
-              }}
-              />
-          <Tab.Screen 
-            name="Profil" 
-            component={ProfilScreen}
-            options={{
-              tabBarIcon: ({size}) => (
-                <Image
-                source={require('../assetimage/usertab.png')}
-                  style={{
-                    width: size,
-                    height: size,
-                  }}/>),
-              }}
-              />
-        </Tab.Navigator>
+      >
+        <Tab.Screen 
+          name="Dashboard" 
+          component={DashboardScreen}
+          options={{
+            tabBarIcon: ({ color }) => (
+              <Icon name="home-analytics" color={color} size={26} />
+            ),
+          }}
+        />
+        <Tab.Screen 
+          name="BuKas" 
+          component={BuKasScreen}
+          options={{
+            tabBarIcon: ({ color }) => (
+              <Icon name="bookshelf" color={color} size={26} />
+            ),
+          }}
+        />
+        <Tab.Screen 
+          name="Chat" 
+          component={ChatScreen}
+          options={{
+            tabBarIcon: ({ color }) => (
+              <Icon name="forum" color={color} size={26} />
+            ),
+          }}
+        />
+        <Tab.Screen 
+          name="Profil" 
+          component={ProfilScreen}
+          options={{
+            tabBarIcon: ({ color }) => (
+              <Icon name="account" color={color} size={26} />
+            ),
+          }}
+        />
+      </Tab.Navigator>
     );
   }
     

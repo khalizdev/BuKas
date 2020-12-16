@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 import {Text, View, Image, TextInput, Button, TouchableHighlight, SafeAreaView, ScrollView, Alert, LogBox} from 'react-native';
 import styles from './Styles';
 import { useNavigation } from '@react-navigation/native';
+import components from './components';
 
 
 const RegistrationScreen = () => {
@@ -41,38 +42,13 @@ const RegistrationScreen = () => {
                 <Image style={styles.logologinscreen} source={require('../assetimage/books.png')}/>
                 <Text style={styles.textloginscreen}>BuKas</Text>
             </View>
-            <View style={styles.columnemaillogin}>
-                <Text style={{marginBottom: 10}}>Email Address</Text>
-                <TextInput 
-                style={styles.InputEmail} 
-                placeholder = "ex: muhnurkhalizz@gmail.com"
-                placeholderTextColor = "#01C5C4"
-                />
-            </View>
-            <View style={styles.columnemaillogin}>
-                <Text style={{marginBottom: 10, marginTop: 15}}>Password</Text>
-                <TextInput 
-                style={styles.InputEmail} 
-                placeholder = "***********" 
-                placeholderTextColor = "#01C5C4"
-                secureTextEntry={true} 
-                />
-            </View>
-            <View style={styles.columnemaillogin}>
-                <Text style={{marginBottom: 10, marginTop: 15}}>Nama Panggilan</Text>
-                <TextInput 
-                style={styles.InputEmail} 
-                placeholder = "Muh Nurkhaliz" 
-                placeholderTextColor = "#01C5C4"
-                />
-            </View>
-            <View style={styles.buttonbottomregist}>
-                <TouchableHighlight 
-                    underlayColor="#01C5C4"
-                    onPress = {()=> navigation.navigate('LoginScreen')}
-                    >
-                    <Text style={styles.submitButton}>Submit</Text>
-                </TouchableHighlight>
+
+            <components.textInput title='Email Address' placeholder='example@gmail.com' secureEntry={false}/>
+            <components.textInput title='Password' placeholder='***********' secureEntry={true}/>
+            <components.textInput title='Nama Panggilan' placeholder='Nama Saya' secureEntry={false}/>
+            
+            <View style={styles.buttonbottom}>
+                <components.primaryButton title='Submit' style={styles.submitButton} screenName='LoginScreen'/>
             </View>
         </View>
     );
